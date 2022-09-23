@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+<!-- Extend base html file -->
+{% block content %}
+<h1>Thank You!</h1>
+{% for msg in get_flashed_messages() %}
+<p>{{ msg }}</p>
+{% endfor %} {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+<!-- Extend base html file -->
+{% block content %}
+<p>{{ question.question }}</p>
+<form action="/answer" method="post">
+  <input type="radio" name="choice" id="choice1" value="{{ question.choices[0] }}">{{ question.choices[0] }}</input><br>
+  <input type="radio" name="choice" id="choice2" value="{{ question.choices[1] }}">{{ question.choices[1] }}</input><br>
+  <input type="submit" value="Submit" />
+</form>
+{% for msg in get_flashed_messages() %}
+  <p>{{ msg }}</p>
+{% endfor %}
+{% endblock %}

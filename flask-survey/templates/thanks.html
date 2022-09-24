@@ -4,4 +4,6 @@
 <h1>Thank You!</h1>
 {% for msg in get_flashed_messages() %}
 <p>{{ msg }}</p>
-{% endfor %} {% endblock %}
+{% endfor %}
+<p>{{ session["responses"] }}</p>
+{% endblock %}

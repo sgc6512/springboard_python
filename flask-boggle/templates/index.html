@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boggle</title>
+  </head>
+  <body>
+    <div id="boggle">
+      <table class="board">
+        <tbody>
+          {% for row in board %}
+          <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="score">Score: 0</div>
+    <div class="timer">Time: 60</div>
+    <hr />
+    <form class="word-form" method="post">
+      Guess: <input type="text" name="word" class="word" autofocus /> <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div class="reset-div" hidden>
+      <button type="reset" class="reset">Reset</button>
+    </div>
+    <div class="message">
+      <!-- Put the message returned from check word here -->
+    </div>
+    <div class="times-played">
+      <!-- Put the times played here -->
+      Number of times played: 0
+    </div>
+    <div class="hi-score">
+      <!-- Put the high score here -->
+      <p>High Score:</p>
+      <p class="hi-score-num">0</p>
+    </div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"
+  ></script>
+  <script src="/static/boggle.js"></script>
+</html>
